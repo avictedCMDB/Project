@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+    <!--实际开发使用的开启Springmvc注解模式 -->
+    <mvc:annotation-driven  />
+
+    <!-- 配置静态资源(js,css,img.....)的解析 -->
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:default-servlet-handler />
+
+
+    <!-- 对于使用注解方式开发的handler：需要在spring容器中进行配置加载 -->
+    <context:component-scan base-package="cn.avited.cmdb.controller" />
+
+    <!-- 视图解析器: 前缀和后缀 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/html/" />
+        <property name="suffix" value=".html" />
+    </bean>
+
+    <!-- 文件(流)上传解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8" />
+        <!-- 单位是字节，我们设置20M = 1024 * 1024 * 20 -->
+        <property name="maxUploadSize" value="20971520" />
+        <property name="maxInMemorySize" value="20971520" />
+    </bean>
+
+
+
+
+</beans>
