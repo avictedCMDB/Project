@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--配置全局变量-->
+    <settings>
+        <!-- 使用JDBC的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true" />
+
+        <!-- 使用数据库的列名替换查询时使用的列别名，默认是true -->
+        <setting name="useColumnLabel" value="true"/>
+
+        <!-- 开启驼峰命名转换:Table{create_time}->Entity{createTime} -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+    </settings>
+
+    <!-- 配置别名 -->
+    <typeAliases>
+        <package name="com.bjfu.o2o.entity" />
+    </typeAliases>
+
+    <mappers>
+        <!--映射文件 -->
+       <!-- <mapper resource="./mapper/AreaDao.xml" />
+        <mapper resource="./mapper/ShopDao.xml" />
+        <mapper resource="./mapper/ShopCategoryDao.xml" />
+        <mapper resource="./mapper/ProductCategoryDao.xml" />
+        <mapper resource="./mapper/ProductDao.xml" />
+        <mapper resource="./mapper/ProductImgDao.xml" />-->
+    </mappers>
+
+</configuration>
