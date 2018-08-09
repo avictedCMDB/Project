@@ -166,11 +166,11 @@
     </dependency>
 
     <!-- 添加oracle jdbc driver -->
-    <!--<dependency>
+    <dependency>
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc6</artifactId>
-      <version>12.1.0.1</version>
-    </dependency>-->
+      <version>11.2.0.1.0</version>
+    </dependency>
 
     <!-- 添加 mysql jdbc driver -->
     <dependency>
